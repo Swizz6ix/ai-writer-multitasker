@@ -1,5 +1,5 @@
 # ai-writer-multitasker
-A simple AI multi task agent demo for my students <br>
+A simple illustration AI multi task agent demo for my students <br>
 This Porject is for demostration purposes only <br>
 
 In practice and for a production level project, the design is not<br> 
