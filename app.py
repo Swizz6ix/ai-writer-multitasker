@@ -1,7 +1,9 @@
-from create_article import create_article
 import streamlit as st
+import time
+
 from gemini_client import ask_gemini
 from prompt_builder import build_prompt
+from task import apply_tone, expand_outline, generate_outline, proofread
 
 st.set_page_config(page_title="AI Writing Assistant", layout="centered")
 
@@ -26,26 +28,43 @@ format_type = st.selectbox(
     ["Email", "Blog Post", "Social Media Post", "Report", "Product Description"]
 )
 
-
-progress = st.progress(0)
+progress_text = f"Drafting {format_type}. Please wait"
+progress = st.progress(0, text=progress_text)
 
 # Generate Button
 if st.button("Generate Content"):
     if not user_input.strip():
-        st.warning("Please enter some content.")
+        st.warning("Please enter some content.", icon = "⚠️")
     else:
-        with st.spinner("Generating..."):
+        with st.spinner("Generating...", show_time=True):
+            # time.sleep(30)
             prompt = build_prompt(user_input, tone, audience, format_type)
-            results = create_article(prompt, tone)
 
-        st.subheader("Outline")
-        st.write(results["outline"])
-        progress.progress(25)
+            outline = generate_outline.generate_outline(user_input)
+            progress.progress(25)
+            st.write(f"Getting the outlines for {user_input}..")
+
+            draft = expand_outline.expand_outline(outline)
+            progress.progress(50)
+            st.write(f"drafting the {format_type}")
+    
+            polished = apply_tone.apply_tone(draft, tone)
+            progress.progress(75)
+            st.write(f"Polishing the {format_type}")
+
+            final_version = proofread.proofread(polished)
+            progress.progress(100)
+            st.write("Here is the final version")
+
+        list = st.expander("Outline")
+        list.write(outline)
 
         st.subheader("Draft")
-        st.write(results["draft"])
-        progress.progress(50)
+        st.write(draft)
+
+        st.subheader("Polished")
+        st.write(polished)
 
         st.subheader("Final Version")
-        st.write(results["final"])
-        progress.progress(100)
+        st.write(final_version)
+        st.success("Done!")
