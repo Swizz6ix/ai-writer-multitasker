@@ -57,12 +57,13 @@ if st.button("Generate Content"):
         list = st.expander("Outline")
         list.write(outline)
 
-        st.subheader("Draft")
-        st.write(draft)
+        expander = st.expander("Draft")
+        expander.write(draft)
 
-        st.subheader("Polished")
-        st.write(polished)
+        expander = st.expander("Polished")
+        expander.write(polished)
 
         st.subheader("Final Version")
         st.write(final_version)
+
         st.success("Done!")
