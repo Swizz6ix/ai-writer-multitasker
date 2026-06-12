@@ -38,13 +38,11 @@ if st.button("Generate Content"):
     else:
         with st.spinner("Generating...", show_time=True):
             # time.sleep(30)
-            prompt = build_prompt(user_input, tone, audience, format_type)
-
             outline = generate_outline.generate_outline(user_input)
             progress.progress(25)
             st.write(f"Getting the outlines for {user_input}..")
 
-            draft = expand_outline.expand_outline(outline)
+            draft = expand_outline.expand_outline(outline, tone, audience, format_type)
             progress.progress(50)
             st.write(f"drafting the {format_type}")
     
@@ -52,7 +50,7 @@ if st.button("Generate Content"):
             progress.progress(75)
             st.write(f"Polishing the {format_type}")
 
-            final_version = proofread.proofread(polished)
+            final_version = proofread.proofread(polished, format_type)
             progress.progress(100)
             st.write("Here is the final version")
 

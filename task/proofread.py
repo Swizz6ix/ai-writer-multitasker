@@ -1,6 +1,6 @@
 from gemini_client import ask_gemini
 
-def proofread(content):
+def proofread(content, format_type):
 
     prompt = f"""
     Proofread and improve:
@@ -11,6 +11,10 @@ def proofread(content):
     - Grammar
     - Clarity
     - Readability
+    - Improve format: {format_type}
+    - remove unnecessary academic words and cliches
+    - humanize the conent
+    - keep it concise
 
     Do not change meaning.
     """
