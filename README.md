@@ -41,29 +41,30 @@ This mimics how human writers work:
 
 # Features Improvement Ideas
 1. **Narrow down to Email writer assistant**
-    [x] Stage 1
-    - Determine intent
-        - Sales
-        - Support
-        - Marketing
-        - Follow-up
+    - [x] Stage 1
+        - Determine intent
+            - Sales
+            - Support
+            - Marketing
+            - Follow-up
 
-    [x] Stage 2
-    - Draft Email structure
-        - subject
-        - Greeting
-        - Body
-        - Call-to-Action
+    - [x] Stage 2
+        - Draft Email structure
+            - subject
+            - Greeting
+            - Body
+            - Call-to-Action
 
-    [x] Stage 3
-    - Draft full email
+    - [x] Stage 3
+        - Draft full email
 
-    [x] Stage 4
-    - Optimize tone
+    - [x] Stage 4
+        - Optimize tone
 
-    [x] Stage 5
-    - Proofread
+    - [x] Stage 5
+        - Proofread
 <br>
+
 
 2. **Blog Writer**
 - **Workflow**
