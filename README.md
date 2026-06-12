@@ -3,11 +3,11 @@ A simple illustration AI multi task agent demo for my students. This Porject is 
 
 # What this Project Teaches
 This project teaches:
-[x] Prompt chaining
-[x] Workflow orchestration
-[x] Modular AI design
-[x] Separation of concerns
-[x] Real-world GenAI application architecture
+- [x] Prompt chaining
+- [x] Workflow orchestration
+- [x] Modular AI design
+- [x] Separation of concerns
+- [x] Real-world GenAI application architecture
 
 # Workflow Architecture
 ```
@@ -34,35 +34,36 @@ A single prompt often produces:
 Breaking the task into stages gives much better results.
 
 This mimics how human writers work:
-[x] Plan
-[x] Draft
-[x] Edit
-[x] Proofread
+- [x] Plan
+- [x] Draft
+- [x] Edit
+- [x] Proofread
 
 # Features Improvement Ideas
 1. **Narrow down to Email writer assistant**
-[x] Stage 1
-- Determine intent
-    - Sales
-    - Support
-    - Marketing
-    - Follow-up
+    [x] Stage 1
+    - Determine intent
+        - Sales
+        - Support
+        - Marketing
+        - Follow-up
 
-[x] Stage 2
-- Draft Email structure
-    - subject
-    - Greeting
-    - Body
-    - Call-to-Action
+    [x] Stage 2
+    - Draft Email structure
+        - subject
+        - Greeting
+        - Body
+        - Call-to-Action
 
-[x] Stage 3
-- Draft full email
+    [x] Stage 3
+    - Draft full email
 
-[x] Stage 4
-- Optimize tone
+    [x] Stage 4
+    - Optimize tone
 
-[x] Stage 5
-- Proofread
+    [x] Stage 5
+    - Proofread
+<br>
 
 2. **Blog Writer**
 - **Workflow**
@@ -83,6 +84,8 @@ SEO Optimization
   ↓
 Final Article
 ```
+<br>
+
 
 3. **Multi-agent Style**
 ```
@@ -99,7 +102,7 @@ Proofreader Agent
 
 # ⚠️ Caution
 In practice and for a production level project, the design is **NOT** advisible
-because it can be expensive and slow due to multiple API calls.
+because <br> it can be expensive and slow due to multiple API calls.
 
 **For a single article:**<br>
 The API is called four (4) times
