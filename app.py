@@ -40,7 +40,7 @@ if st.button("Generate Content"):
             # time.sleep(30)
             outline = generate_outline.generate_outline(user_input)
             progress.progress(25)
-            st.write(f"Getting the outlines for {user_input}..")
+            st.write(f'Getting the outlines for "{user_input}"..')
 
             draft = expand_outline.expand_outline(outline, tone, audience, format_type)
             progress.progress(50)
